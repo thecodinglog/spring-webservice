@@ -1,5 +1,6 @@
 package cothe.webservice.domain.posts;
 
+import cothe.webservice.domain.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,7 +18,7 @@ import javax.persistence.Id;
 @NoArgsConstructor(access = AccessLevel.PROTECTED) // 기본 생성자 자동 추가
 @Getter
 @Entity // Table 과 링크될 클래스
-public class Posts {
+public class Posts extends BaseTimeEntity {
     @Id // pk 필드
     @GeneratedValue // pk 생성 규칙
     private  Long id;
