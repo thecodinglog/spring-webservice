@@ -2,9 +2,12 @@ package cothe.webservice.web;
 
 import cothe.webservice.service.PostsService;
 import lombok.AllArgsConstructor;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.Arrays;
 
 /**
  * @author Jeongjin Kim
@@ -15,11 +18,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WebController {
     private PostsService postsService;
 
-     @GetMapping("/")
-    public String main(Model model){
+
+    @GetMapping("/")
+    public String main(Model model) {
         model.addAttribute("posts", postsService.findAllDesc());
 
 
         return "main";
     }
+
+
 }
